@@ -19,6 +19,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
 import javax.annotation.concurrent.NotThreadSafe;
+import java.util.Properties;
 
 /**
  * A sink that exposes metrics data in prometheus format by HTTP.
@@ -37,7 +38,7 @@ public class PrometheusMetricsServlet implements Sink {
    *
    * @param registry the metric registry to register
    */
-  public PrometheusMetricsServlet(MetricRegistry registry) {
+  public PrometheusMetricsServlet(Properties properties, MetricRegistry registry) {
     mCollectorRegistry = new CollectorRegistry();
     mCollectorRegistry.register(new DropwizardExports(registry));
   }
