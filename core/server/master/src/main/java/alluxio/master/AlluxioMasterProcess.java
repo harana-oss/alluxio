@@ -65,7 +65,7 @@ public class AlluxioMasterProcess extends MasterProcess {
 
   private final MetricsServlet mMetricsServlet = new MetricsServlet(MetricsSystem.METRIC_REGISTRY);
   private final PrometheusMetricsServlet mPMetricsServlet = new PrometheusMetricsServlet(
-      MetricsSystem.METRIC_REGISTRY);
+      null, MetricsSystem.METRIC_REGISTRY);
 
   /** The master registry. */
   private final MasterRegistry mRegistry;

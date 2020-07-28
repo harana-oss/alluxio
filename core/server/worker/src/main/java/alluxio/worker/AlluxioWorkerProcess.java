@@ -67,7 +67,7 @@ public final class AlluxioWorkerProcess implements WorkerProcess {
 
   private final MetricsServlet mMetricsServlet = new MetricsServlet(MetricsSystem.METRIC_REGISTRY);
   private final PrometheusMetricsServlet mPMetricsServlet = new PrometheusMetricsServlet(
-      MetricsSystem.METRIC_REGISTRY);
+      null, MetricsSystem.METRIC_REGISTRY);
 
   /** The worker registry. */
   private WorkerRegistry mRegistry;
